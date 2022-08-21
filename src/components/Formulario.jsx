@@ -79,22 +79,22 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
   return (
     <div className="md:w-1/2 lg:w-2/5">
 
-        <h2 className="font-black text-3xl text-center">Seguimiento pacientes</h2>
-          <p className='text-xl mt-5 mb-10 text-center'>Añade pacientes y {''}
-            <span className="text-indigo-600 font-bold">Administralos</span>
+        <h2 className="font-black text-3xl text-center">Patient follow-up</h2>
+          <p className='text-xl mt-5 mb-10 text-center'>Add patients and {''}
+            <span className="text-indigo-600 font-bold">manage them</span>
           </p>
 
       <form className='bg-slate-400 shadow-md rounded-lg py-10 px-5 mb-10' onSubmit={handleSubmit}>
-      {error && <Error><p>Todos los campos son obligatorios</p></Error>}
+      {error && <Error><p>All fields are required</p></Error>}
           <div className="mb-5">
-            <label htmlFor="mascota" className='block text-gray-700 uppercase font-bold'>Nombre Mascota</label>
+            <label htmlFor="mascota" className='block text-gray-700 uppercase font-bold'>Nme Pet</label>
             <input id="mascota" type="text" placeholder='Nombre de la mascota...' className='border-2 w-full p-2 mt-3 rounded-md'
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}></input>
           </div>
 
           <div className="mb-5">
-            <label htmlFor="propietario" className='block text-gray-700 uppercase font-bold'>Nombre del propietario</label>
+            <label htmlFor="propietario" className='block text-gray-700 uppercase font-bold'>Owner's name</label>
             <input id="propietario" type="text" placeholder='Nombre del propietario...' className='border-2 w-full p-2 mt-3 rounded-md'
             value={propietario}
             onChange={(e) => setPropietario(e.target.value)}></input>
@@ -108,21 +108,21 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
           </div>
 
           <div className='mb-5'>
-            <label htmlFor="alta" className='block text-gray-700 uppercase font-bold'>Fecha de alta</label>
+            <label htmlFor="alta" className='block text-gray-700 uppercase font-bold'>Discharge date</label>
             <input id="alta" type="date" className='border-2 w-full p-2 mt-3 rounded-md'
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}></input>
           </div>
 
           <div className='mb-5'>
-            <label htmlFor="text" className='block text-gray-700 uppercase font-bold'>Síntomas</label>
+            <label htmlFor="text" className='block text-gray-700 uppercase font-bold'>Symptom</label>
             <textarea id="text" placeholer="describe los sintomas" className='border-2 w-full p-2 mt-2 placeholder.gray-400 rounded-md'
             value={sintomas}
             onChange={(e) => setSintomas(e.target.value)}></textarea>
           </div>
 
           <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold cursor-pointer"
-          value={paciente.id ? 'Editar Paciente' : 'Agregar paciente'}></input>
+          value={paciente.id ? 'Edit patient' : 'Add patient'}></input>
 
       </form>
 
