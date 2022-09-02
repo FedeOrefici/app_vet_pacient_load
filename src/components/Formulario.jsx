@@ -87,15 +87,15 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
       <form className='bg-slate-400 shadow-md rounded-lg py-10 px-5 mb-10' onSubmit={handleSubmit}>
       {error && <Error><p>All fields are required</p></Error>}
           <div className="mb-5">
-            <label htmlFor="mascota" className='block text-gray-700 uppercase font-bold'>Nme Pet</label>
-            <input id="mascota" type="text" placeholder='Nombre de la mascota...' className='border-2 w-full p-2 mt-3 rounded-md'
+            <label htmlFor="mascota" className='block text-gray-700 uppercase font-bold'>Name Pet</label>
+            <input id="mascota" type="text" placeholder='Name of your pet...' className='border-2 w-full p-2 mt-3 rounded-md'
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}></input>
           </div>
 
           <div className="mb-5">
             <label htmlFor="propietario" className='block text-gray-700 uppercase font-bold'>Owner's name</label>
-            <input id="propietario" type="text" placeholder='Nombre del propietario...' className='border-2 w-full p-2 mt-3 rounded-md'
+            <input id="propietario" type="text" placeholder='Owner name...' className='border-2 w-full p-2 mt-3 rounded-md'
             value={propietario}
             onChange={(e) => setPropietario(e.target.value)}></input>
           </div>
@@ -116,7 +116,7 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
 
           <div className='mb-5'>
             <label htmlFor="text" className='block text-gray-700 uppercase font-bold'>Symptom</label>
-            <textarea id="text" placeholer="describe los sintomas" className='border-2 w-full p-2 mt-2 placeholder.gray-400 rounded-md'
+            <textarea id="text" placeholer="describe symptom" className='border-2 w-full p-2 mt-2 placeholder.gray-400 rounded-md'
             value={sintomas}
             onChange={(e) => setSintomas(e.target.value)}></textarea>
           </div>
