@@ -1,7 +1,6 @@
 import Error from './Error'
 import {useState, useEffect} from 'react'
 
-///cooregir hooks- convertir en un objeto- agregar funcion handle change
 const Formulario = ({pacientes, setPacientes, paciente}) => {
   
   const [nombre, setNombre] = useState('');
@@ -10,6 +9,7 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
   const [fecha, setFecha] = useState('');
   const [sintomas, setSintomas] = useState('');
 
+  //errors
   const [error, setError] = useState(false)
 
 
@@ -59,7 +59,8 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
       objetoPaciente.id = paciente.id;
       
     const pacientesActualizados = pacientes.map(pacienteState => pacienteState.id === paciente.id
-      ? objetoPaciente : pacienteState)
+      ? objetoPaciente 
+      : pacienteState)
       setPacientes(pacientesActualizados)
 
     }else {
@@ -121,8 +122,10 @@ const Formulario = ({pacientes, setPacientes, paciente}) => {
             onChange={(e) => setSintomas(e.target.value)}></textarea>
           </div>
 
-          <input type="submit" className="bg-indigo-600 w-full p-3 text-white uppercase font-bold cursor-pointer"
-          value={paciente.id ? 'Edit patient' : 'Add patient'}></input>
+          <input 
+          type="submit" 
+          className="bg-indigo-600 w-full p-3 text-white uppercase font-bold cursor-pointer"
+          value={nombre ? 'Edit patient' : 'Add patient'}></input>
 
       </form>
 
